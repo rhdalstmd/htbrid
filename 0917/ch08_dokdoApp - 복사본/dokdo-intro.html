@@ -1,0 +1,204 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>캠핑 가이드 앱</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+    li { list-style:none; }
+    .picture { list-style:none; padding:0; margin:0; }
+    .picture li { float:left; width:50%;}
+    .picture li a {display:block; margin:5px; border: 1px }
+    .picture li img { display:block; width:50%;  height:auto;}
+    .picture li img:hover { display:block; width:100%;  height:auto;} 
+
+    /* 캠핑 테마 CSS */
+    .ui-page-theme-b .ui-bar-b,
+    .ui-page-theme-b .ui-bar-b .ui-btn,
+    .ui-page-theme-b .ui-header,
+    .ui-page-theme-b .ui-footer {
+        background-color: #6B8E23 !important; /* 올리브 드래브 색상 */
+        border-color: #556B2F !important; /* 진한 올리브색 테두리 */
+        color: #fff !important; /* 텍스트는 흰색으로 */
+        text-shadow: none !important;
+    }
+
+    .ui-page-theme-b .ui-btn:not(.ui-btn-active):not(.ui-corner-all) {
+        background-color: #8FBC8F !important; /* 연한 초록색 버튼 */
+        color: #fff !important;
+        border-color: #6B8E23 !important;
+    }
+
+    .ui-page-theme-b .ui-listview a.ui-btn {
+        background-color: #8B4513 !important; /* 안쪽 리스트뷰 버튼은 흙갈색 */
+        border-color: #A0522D !important;
+        color: #fff !important;
+    }
+
+    .ui-collapsible-set .ui-collapsible-heading .ui-btn {
+        background-color: #556B2F !important; /* Collapsible 헤더 색상 */
+        color: #fff !important;
+        border-color: #556B2F !important;
+    }
+    
+    /* 추가 스타일 */
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #444; /* 제목에 그림자 추가 */
+    }
+
+    /* 버튼에 그림자 추가 */
+    .ui-btn {
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    
+    /* 리스트뷰 항목에 둥근 모서리와 그림자 추가 */
+    .ui-listview > li {
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        margin-bottom: 10px;
+    }
+    
+    /* 갤러리 이미지에 둥근 모서리와 그림자 추가 */
+    .picture li img {
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+
+<body>
+<div data-theme="b">
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>캠핑 가이드 앱</h1>
+        </div>
+        <div data-role="content" style="text-align:center">
+                <img src="bgcamping1.png" >
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#intro">캠핑장비 가이드</a></li>
+                <li><a href="#movie" data-rel="dialog">캠핑 영상</a></li>
+                <li><a href="#wizard3-1" data-rel="dialog">캠핑 음악</a></li>
+                <li><a href="#gallery">캠핑 갤러리</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h1>캠핑은 즐거워_홍길동</h1>
+        </div>
+    </div>
+    
+    <div data-role="page" id="intro" data-theme="b">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>      
+            <h1>캠핑 장비 가이드</h1>
+        </div>
+        <div data-role="content">
+                <div  style="text-align:center">
+                    <img src="bgcamping2.png">
+                </div>          
+            <div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>필수 장비</h3>
+                    <p>텐트, 침낭, 매트, 테이블, 의자, 랜턴은 캠핑의 기본입니다. 계절과 날씨에 맞는 장비를 선택하는 것이 중요합니다. ...생략</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>조리 도구</h3>
+                    <p>휴대용 버너, 코펠, 식기류, 칼, 가위 등 간단한 조리 도구를 준비하면 야외에서도 맛있는 식사를 즐길 수 있습니다. ...생략</p>
+                </div>
+                <div data-role="collapsible" >
+                    <h3>안전 용품</h3>
+                    <p>응급처치 키트, 손전등, 구급약, 여분의 배터리 등을 꼭 챙겨가세요. 예상치 못한 상황에 대비할 수 있습니다. ...생략</p>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h1>캠핑은 즐거워_홍길동</h1>
+        </div>        
+    </div>
+    
+    <div data-role="page" id="movie" data-theme="b">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>캠핑 영상</h1>
+        </div>
+        <div data-role="content" >
+            <div class="ui-bar ui-bar-a">초보 캠퍼를 위한 텐트 설치 영상</div><br/>
+            <li><iframe width="100%" height="240" src="https://www.youtube.com/watch?v=RcK3p2_UdIY"></iframe></li><br/>
+            <div class="ui-bar ui-bar-a">아름다운 캠핑 명소 영상</div><br/>
+            <li><video controls width="100%" preload="metadata">
+                <source src="camping.mp4" type="video/mp4">
+            </video></li>
+        </div>
+        <div data-role="footer" data-theme="b">
+        </div>
+    </div>
+    
+    <div data-role="page" id="wizard3-1">
+        <div data-role="header">
+            <h1>캠핑 음악1</h1>
+        </div>
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">잔잔한 밤, 모닥불 음악</div><br/>
+            <audio controls width="100%" preload="metadata">
+                <source src="campfire_music.mp3" type="audio/mp3">
+            </audio>    
+            <img src="3-1.jpg" alt="" width="100%">
+        </div>
+        <div data-role="footer">
+            <a href="#home"  data-direction="reverse">이전</a>
+            <a href="#wizard3-2" data-rel="dialog" data-transition="slide">다음</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="wizard3-2">
+        <div data-role="header">
+            <h1>캠핑 음악2</h1>
+        </div>
+        <div data-role="content">
+            <div class="ui-bar ui-bar-e">신나는 캠핑 여행 음악</div><br/>
+            <audio controls width="100%" preload="metadata">
+                <source src="travel_music.mp3" type="audio/mp3">
+            </audio>            
+            <img src="3-2.jpg" alt="" width="100%">
+        </div>
+        <div data-role="footer">
+            <a href="#wizard3-1"  data-direction="reverse">이전</a>
+            <a href="#home">처음</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="gallery"  data-theme="b">
+        <div data-role="header" data-position="fixed"  data-theme="b">
+            <a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+            <h1>캠핑 갤러리</h1>
+        </div>
+        <div data-role="content">
+            <ul class="picture">
+                <li><a href="4-1.jpg" rel="external"><img src="4-1.jpg" /></a></li> 
+                <li><a href="4-2.jpg" rel="external"><img src="4-2.jpg" /></a></li> 
+                <li><a href="4-3.jpg" rel="external"><img src="4-3.jpg" /></a></li> 
+                <li><a href="4-4.jpg" rel="external"><img src="4-4.jpg" /></a></li> 
+                <li><a href="4-5.jpg" rel="external"><img src="4-5.jpg" /></a></li> 
+                <li><a href="4-6.jpg" rel="external"><img src="4-6.jpg" /></a></li> 
+                <li><a href="4-7.jpg" rel="external"><img src="4-7.jpg" /></a></li> 
+                <li><a href="4-8.jpg" rel="external"><img src="4-8.jpg" /></a></li> 
+                <li><a href="4-9.jpg" rel="external"><img src="4-9.jpg" /></a></li>  
+                <li><a href="4-10.jpg" rel="external"><img src="4-10.jpg" /></a></li>    
+                <li><a href="4-11.jpg" rel="external"><img src="4-11.jpg" /></a></li>  
+                <li><a href="4-12.jpg" rel="external"><img src="4-12.jpg" /></a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h1>캠핑은 즐거워_홍길동</h1>
+        </div>        
+    </div>
+</div>  
+</body>
+</html>
