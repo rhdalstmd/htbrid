@@ -1,0 +1,30 @@
+{
+  "name": "com.example.threelinediary",
+  "displayName": "Three-Line Diary",
+  "version": "1.0.0",
+  "description": "Three-Line Diary Mobile App - 매일 세 줄씩 기록하는 일상",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cordova build",
+    "build:android": "cordova build android",
+    "emulate": "cordova emulate android",
+    "run": "cordova run android",
+    "prepare": "cordova prepare"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "diary",
+    "mobile"
+  ],
+  "author": "Three-Line Diary Team",
+  "license": "MIT",
+  "devDependencies": {
+    "cordova-android": "^14.0.1"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  }
+}
